@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React, { useEffect, useState, useRef } from "react";
 import Number from "./Number";
 
@@ -90,9 +90,6 @@ export default Game = ({ randomNumbersCount, initialSeconds }) => {
       <Text style={styles.target}>{target}</Text>
       <Text style={[styles.target, styles[gameStatus]]}>{gameStatus}</Text>
       <Text>{remainingSeconds}</Text>
-      <View display={gameStatus != "PLAYING"?'flex':'none'}>
-        <Button title="Jugar de nuevo" onPress={resetGame}  />
-        </View>
       <View style={styles.randomContainer}>
         {randomNumbers.map((number, index) => (
           <Number
